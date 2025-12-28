@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สูตรฟิสิกส์ ม.4</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/physics.png">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-image: url('img/b3.png'); /* ใช้รูปเดียวกับหน้าหลักเพื่อให้ดูเป็นธีมเดียวกัน */
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* กล่องครอบหัวข้อใหญ่ */
+        .header-box {
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            border: 4px solid #ffcc00;
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* แม่แบบการตกแต่งบทเรียน (เหมือนการสร้าง Class เปล่าๆ ไว้เรียกใช้) */
+        .topic-card {
+            background: rgba(255, 255, 255, 0.9); /* ขาวโปร่งแสงแบบ Glassmorphism */
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1;
+            min-width: 280px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px); /* เวลาเมาส์ชี้แล้วกล่องจะลอยขึ้นนิดนึง */
+        }
+
+        /* ตกแต่งหัวข้อในแต่ละบท */
+        .topic-title {
+            background-color: #0044cc;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border: 2px solid #002266;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden; /* มุมตารางมนตามกล่อง */
+        }
+
+        th {
+            background-color: #0055ff;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f7ff; /* แถวเว้นแถวให้ดูง่าย */
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: white;
+            background: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← กลับหน้าหลัก</a>
+    
+    <div class="header-box">
+        <h1 style="margin: 0;">สูตรฟิสิกส์ ม.4</h1>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 10px;">
+
+        <div class="topic-card">
+            <div class="topic-title">การเคลื่อนที่</div>
+            <table>
+                <thead>
+                    <tr><th>สัญลักษณ์</th><th>ปริมาณฐาน</th><th>ชื่อหน่วย</th></tr>
+                </thead>
+                <tbody align="center">
+                    <tr><td>s</td><td>ระยะทาง</td><td>m</td></tr>
+                    <tr><td>x</td><td>ตำแหน่ง</td><td>m</td></tr>
+                    <tr><td>t</td><td>เวลา</td><td>s</td></tr>
+                    <tr><td>v</td><td>อัตราเร็ว</td><td>m/s</td></tr>
+                    <tr><td>\( \vec{v} \)</td><td>ความเร็ว</td><td>m/s</td></tr>
+                    <tr><td>u</td><td>ความเร็วต้น</td><td>m/s</td></tr>
+                    <tr><td>a</td><td>ความเร่ง</td><td>m/s<sup>2</sup></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-title">กฎและแรงของนิวตัน</div>
+            <table>
+                <thead>
+                    <tr><th>สัญลักษณ์</th><th>ปริมาณฐาน</th><th>ชื่อหน่วย</th></tr>
+                </thead>
+                <tbody align="center">
+                    <tr><td>F</td><td>แรง</td><td>N</td></tr>
+                    <tr><td>g</td><td>ความเร่งโน้มถ่วง</td><td>m/s<sup>2</sup></td></tr>
+                    <tr><td>N</td><td>แรงปกติ</td><td>N</td></tr>
+                    <tr><td>f</td><td>แรงเสียดทาน</td><td>N</td></tr>
+                    <tr><td>\(\mu\)</td><td>สัมประสิทธิ์เสียดทาน</td><td>ไม่มี</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-title">งาน พลังงาน กำลัง</div>
+            <table>
+                <thead>
+                    <tr><th>สัญลักษณ์</th><th>ปริมาณฐาน</th><th>ชื่อหน่วย</th></tr>
+                </thead>
+                <tbody align="center">
+                    <tr><td>W</td><td>งาน</td><td>N·m (J)</td></tr>
+                    <tr><td>E</td><td>พลังงาน</td><td>J</td></tr>
+                    <tr><td>K</td><td>พลังงานจลน์</td><td>J</td></tr>
+                    <tr><td>U</td><td>พลังงานศักย์</td><td>J</td></tr>
+                    <tr><td>P</td><td>กำลัง</td><td>W</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-title">โมเมนตัม</div>
+            <table>
+                <thead>
+                    <tr><th>สัญลักษณ์</th><th>ปริมาณฐาน</th><th>ชื่อหน่วย</th></tr>
+                </thead>
+                <tbody align="center">
+                    <tr><td>p</td><td>โมเมนตัม</td><td>kg·m/s</td></tr>
+                    <tr><td>I</td><td>อิมพัลส์</td><td>N·s</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div> 
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สูตรฟิสิกส์ ม.5</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/physics.png">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-image: url('img/b3.png');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header-box {
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            border: 4px solid #ffcc00;
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+    
+        .topic-card {
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1;
+            min-width: 280px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px); 
+        }
+
+        
+        .topic-title {
+            background-color: #0044cc;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border: 2px solid #002266;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden; 
+        }
+
+        th {
+            background-color: #0055ff;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f7ff; 
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: white;
+            background: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .next-link {
+            text-decoration: none;
+            color: white;
+            background: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            position: fixed;   
+            bottom: 20px;     
+            right: 20px;       
+            z-index: 1000;     
+        }
+        
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← กลับหน้าหลัก</a>
+    
+    <div class="header-box">
+        <h1 style="margin: 0;">สูตรฟิสิกส์ ม.5</h1>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 10px;">
+
+        <div class="topic-card">
+            <div class="topic-title">การเคลื่อนที่แบบหมุน</div>
+            <table>
+                <thead>
+                    <tr><th>สัญลักษณ์</th><th>ปริมาณฐาน</th><th>ชื่อหน่วย</th></tr>
+                </thead>
+                <tbody align="center">
+                    <tr><td>θ</td><td>มุม</td><td>red</td></tr>
+                    <tr><td>ω</td><td>อัตราเร็วเชิงมุม</td><td>red/s</td></tr>
+                    <tr><td>a</td><td>ความเร่งเชิงมุม</td><td>red/s<sup>2</sup></td></tr>
+                    <tr><td>r</td><td>รัศมี</td><td>m</td></tr>
+                    <tr><td>v</td><td>อัตราเร็วเชิงเส้น</td><td>m/s</td></tr>
+                    <tr><td>a<sub>c</sub></td><td>ความเร่งสู่ศูนย์กลาง</td><td>m/s<sup>2</sup></td></tr>
+                    <tr><td>T</td><td>แรงบิด</td><td>N·m</td></tr>
+                    <tr><td>I</td><td>โมเมนต์ความเฉื่อย</td><td>kg·m<sup>2</sup></td></tr>
+                    <tr><td>L</td><td>โมเมนตัมเชิงมุม</td><td>kg·m<sup>2</sup>/s</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-title">คลื่นกล</div>
+            <table>
+                <thead>
+                    <tr><th>สัญลักษณ์</th><th>ปริมาณฐาน</th><th>ชื่อหน่วย</th></tr>
+                </thead>
+                <tbody align="center">
+                    <tr><td>λ</td><td>ความยาวคลื่น</td><td>m</td></tr>
+                    <tr><td>f</td><td>ความถี่</td><td>Hz</td></tr>
+                    <tr><td>T</td><td>คาบ</td><td>s</td></tr>
+                    <tr><td>v</td><td>อัตราเร็วคลื่น</td><td>m/s</td></tr>
+                    <tr><td>A</td><td>แอมพลิจูด</td><td>m</td></tr>
+                    <tr><td>k</td><td>เลขคลื่น</td><td>rad/m</td></tr>
+                    <tr><td>Φ</td><td>เฟส</td><td>rad</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-title">เสียง</div>
+            <table>
+                <thead>
+                    <tr><th>สัญลักษณ์</th><th>ปริมาณฐาน</th><th>ชื่อหน่วย</th></tr>
+                </thead>
+                <tbody align="center">
+                    <tr><td>v</td><td>อัตรเร็วเสียง</td><td>m/s</td></tr>
+                    <tr><td>I</td><td>ความเข้มเสียง</td><td>W/m<sup>2</sup></td></tr>
+                    <tr><td>P</td><td>กำลังเสียง</td><td>W</td></tr>
+                    <tr><td>β</td><td>ระดับความดัง</td><td>dB</td></tr>
+                    <tr><td>r</td><td>ระยะจากแหล่งกำเนิด</td><td>m</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-title">SHM และลูกตุ้ม</div>
+            <table>
+                <thead>
+                    <tr><th>สัญลักษณ์</th><th>ปริมาณฐาน</th><th>ชื่อหน่วย</th></tr>
+                </thead>
+                <tbody align="center">
+                    <tr><td>\(x\)</td><td>การกระจัด</td><td>m</td></tr>
+                    <tr><td>k</td><td>ค่าคงตัวสปริง</td><td>N/m</td></tr>
+                    <tr><td>m</td><td>มวล</td><td>kg</td></tr>
+                    <tr><td>L</td><td>ความยาวลูกตุ้ม</td><td>m</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div> 
+</body>
+</html>
